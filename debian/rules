@@ -17,6 +17,10 @@ URL := http://www.testforme.com/download/linksys/SPA942_Firmware_6.1.5a.zip
 %:
 	dh  $@
 
+override_dh_install:
+	mv spa942-6-1-5a.bin spa942.bin
+	dh_install
+
 print-version:
 	@@echo "Debian version:          $(DEBVERSION)"
 	@@echo "Upstream version:        $(UPVERSION)"
